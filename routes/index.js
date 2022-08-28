@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const bodyParser = require('body-parser');
 const { render } = require('ejs');
 const { application } = require('express');
 const mongoclient = global.mongoclient;
