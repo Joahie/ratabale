@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/jaODtWd.png">
+    <link href="/css/addAnInstructor.css" rel="stylesheet" type="text/css" />
+  <title>Add an instructor</title>
+  <script src="/js/script.js"></script>
+
+</head>
+<body>
+  <header id = "home">
+      <a href="/"><img src="https://i.imgur.com/sT16qlE.png" id = "logo"></a>
+     
+    
+    <nav>          
+      <ul>
+        <li>  <form class="searchBar" action="/search" method = "GET">
+          <input type="text" placeholder="Instructor's name" name="search" id = "searchBar">
+        </form></li>
+        <li><a class = "homeButton"  href="/">Home</a></li>
+
+        <li id = "dissapearFirst"><a  href="/#about">About</a></li>
+                <li id = "dissapearFirst"><a  href="/contact">Contact</a></li>
+
+        <li id = "dissapearFirst">     <form action="/signout" method = "POST"><button>Sign Out</button></form>
+   </li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <section id = "contact">
+
+    <h1>Add an instructor</h1>
+    <form method = "POST" action = "/addAnInstructor">      
+  <input required  name="name" type="text" class="feedback-input" placeholder="Instructor's full name"/>   
+<select required name="typeOfEducator" class = "feedback-input">
+      <option value="" disabled selected>Type of instructor</option>
+
+  <option value="Middle School Teacher">Middle School Teacher</option>
+    <option value="High School Teacher">High School Teacher</option>
+  <option value="College Professor">College Professor</option>
+  <option value="Tutor">Tutor</option>
+    <option value="Homeschool Co-Op Teacher">Homeschool Co-Op Teacher</option>
+    <option value="Online Class Instructor">Online Class Instructor</option>
+</select>
+      
+  <input required  name="subjectClass" type="text" class="feedback-input" placeholder="Subject/Class" />
+        <input name="school" type="text" class="feedback-input" placeholder="Educational institution (optional)" />
+  
+        <input type="submit" value="SUBMIT"/>
+</form>
+<%if (alreadyCreated) {%>
+  <h2>A profile has already been created for this instructor. If you'd like to view it or rate them click <a href="/search?search=<%=teacherName%>">here.</a></h2>
+<%}%>
+</section>
+<footer>
+ <div>      
+   <span id = "footerHeader">Code</span>
+   <br>
+   <br>    
+     <span>    
+Find all the source code for the project on <a href="https://github.com/Joahie/ratabale" target="_blank">Github</a></a>.
+     </span>
+ </div>
+<div>
+     <span id = "footerHeader">Website</span>
+   <br>
+   <br>
+     <span><a id = "noUnderline"href="/">Home</a></span>
+ <br><br>
+<span><a id = "noUnderline"href="/#about">About</a></span>
+<br><br>
+     <span><a id = "noUnderline"href="/contact">Contact</a></span>
+ </div>
+  </footer>
+</body>
+</html>

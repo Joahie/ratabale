@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>RaTable</title>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/x-icon" href="https://i.imgur.com/jaODtWd.png">
+
+</head>
+
+<body>
+  <header id="home">
+    <a href="/"><img src="https://i.imgur.com/Rzrh8hY.png" id="logo"></a>
+
+    <nav>
+      <ul>
+        <li><a id="dissapearFirst" href="#about">About</a></li>
+        <li><a id="dissapearFirst" href="/contact">Contact</a></li>
+
+        <% if (user) { %>
+          <li><form action="/signout" method = "POST"><button>Sign Out</button></form> </li>
+            <% } else { %>
+          <li> <button onClick="redirect('/signin')" />Sign In</button></li>
+            <% } %>
+          
+      </ul>
+    </nav>
+
+    <img src="https://i.imgur.com/wb6THmX.png" alt="RaTable" id="large_logo">
+
+    <form class="searchBar" action="/search" method="GET">
+      <input type="text" placeholder="Instructor's name" name="search" id="searchBar">
+    </form>
+
+  </header>
+  <section id="about">
+    <h1>About</h1>
+    <p>RaTable is an open source website used to rate teachers ranging from high school teachers to private tutors. This
+      is done to help students make the right decision when choosing classes and teachers. To ensure non-biased reviews,
+      users stay anonymous. Aside from rating teachers, users can add notes about them (ie. the teacher doesn't stick to
+      the textbook much, they care more about grammar than eloquence in writing assignments, etc.) to help future
+      students succeed.
+      <br><br>
+      But what makes this different from websites such as <a href="https://www.ratemyprofessors.com/"
+        target="_blank">RateMyProfessor.com</a>? Here at Ratable we believe that finding good teachers and tutors for
+      primary and secondary school is just as, if not more important than college education. And unfortunately, <a
+        href="https://www.ratemyprofessors.com/" target="_blank">RateMyProfessor.com</a> only covers College professors,
+      while RaTable covers reviews for middle and high school teachers, online teachers, and private tutors.
+    </p>
+  </section>
+
+  <footer>
+    <div>
+      <span id="footerHeader">Code</span>
+      <br>
+      <br>
+      <span>
+        Find all the source code for the project on <a href="https://github.com/Joahie/ratabale"
+          target="_blank">Github</a></a>.
+      </span>
+    </div>
+    <div>
+      <span id="footerHeader">Website</span>
+      <br>
+      <br>
+      <span><a id="noUnderline" href="#home">Home</a></span>
+      <br><br>
+      <span><a id="noUnderline" href="#about">About</a></span>
+      <br><br>
+      <span><a id="noUnderline" href="/contact">Contact</a></span>
+    </div>
+  </footer>
+
+
+
+
+  <script src="/js/script.js"></script>
+</body>
+
+</html>

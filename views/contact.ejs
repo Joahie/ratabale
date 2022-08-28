@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/jaODtWd.png">
+    <link href="/css/contact.css" rel="stylesheet" type="text/css" />
+  <title>Contact</title>
+  <script src="/js/script.js"></script>
+
+</head>
+<body>
+  <header id = "home">
+      <a href="/"><img src="https://i.imgur.com/sT16qlE.png" id = "logo"></a>
+     
+    
+    <nav>          
+      <ul>
+        <li>  <form class="searchBar" action="/search" method = "GET">
+          <input type="text" placeholder="Instructor's name" name="search" id = "searchBar">
+        </form></li>
+        <li><a class = "homeButton"  href="/">Home</a></li>
+
+        <li id = "dissapearFirst"><a  href="/#about">About</a></li>
+        <li id = "dissapearFirst"><a  href="#home">Contact</a></li>
+        <% if (user) { %>
+          <li><form action="/signout" method = "POST"><button>Sign Out</button></form> </li>
+            <% } else { %>
+          <li> <button onClick="redirect('/signin')" />Sign In</button></li>
+            <% } %>   
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <section id = "contact">
+
+    <h1>Send us a message</h1>
+    <form method = "POST" action = "/contact">      
+  <input required  name="name" type="text" class="feedback-input" placeholder="Name" />   
+  <input required  name="email" type="email" class="feedback-input" placeholder="Email" />
+  <textarea required name="text" class="feedback-input" placeholder="Comment"></textarea>
+  <input type="submit" value="SUBMIT"/>
+</form>
+<%if(received){%>
+<h2>Your form has been received. Thanks for the feedback!</h2>
+<%}%>
+
+</section>
+<footer>
+ <div>      
+   <span id = "footerHeader">Code</span>
+   <br>
+   <br>    
+     <span>    
+Find all the source code for the project on <a href="https://github.com/Joahie/ratabale" target="_blank">Github</a></a>.
+     </span>
+ </div>
+<div>
+     <span id = "footerHeader">Website</span>
+   <br>
+   <br>
+     <span><a id = "noUnderline"href="/">Home</a></span>
+ <br><br>
+<span><a id = "noUnderline"href="/#about">About</a></span>
+<br><br>
+     <span><a id = "noUnderline"href="#home">Contact</a></span>
+ </div>
+  </footer>
+</body>
+</html>
+
+
+
+

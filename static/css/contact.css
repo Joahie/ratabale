@@ -1,0 +1,237 @@
+#searchBar{
+  background-image: url('https://i.imgur.com/E0Yv9aJ.png');
+  background-repeat: no-repeat;
+  background-position: bottom 10px left 15px;
+  background-size: 4%;
+  padding-left: 40px !important;
+
+}@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+h1{
+  font-size: 50px;
+  text-align: center;
+  color: #4E6764;
+}
+section form { max-width:420px; margin:50px auto; }
+
+.feedback-input {
+  color:#4E6764;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 15px;
+  line-height: 22px;
+  background-color: transparent;
+  border:3px solid #4E6764;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:100%;
+  box-sizing: border-box;
+  outline:0;
+}
+
+
+section textarea {
+  height: 150px;
+  line-height: 150%;
+  resize:vertical;
+}
+
+section [type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background:#4E6764;
+  border-radius:15px;
+  border:0;
+  color:white;
+  font-size:24px;
+  padding-top:10px;
+  padding-bottom:10px;
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:#374d4b; }
+html, body {
+  height: 100%;
+  width: 100%;
+}
+*{
+  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: 'Filson', sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+section{
+  padding: 75px 75px 50px 75px;
+  
+}
+
+/*****************************
+Overall Ends
+*****************************/
+
+/*****************************
+Header Begins
+*****************************/
+
+#logo{
+  padding: 25px;
+}
+
+
+header {
+	color: black;
+	cursor: default;
+	line-height: 4.4em;
+	width: 100%;
+  font-family: 'Filson';
+  background: url("./img/header_image.jpg") no-repeat;
+  
+  background-position: center 0px;
+  background-size: cover;
+  background: black;
+}
+
+/*****************************
+Nav Begins
+*****************************/
+
+header nav {
+	height: inherit;
+	line-height: inherit;
+	position: absolute;
+	right: 1.25em;
+	top: 0;
+	vertical-align: right;
+}
+
+header nav ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+  padding-right: 30px;
+  padding-top: 30px;
+}
+
+header nav ul li {
+	border-radius: 0px;
+	display: inline-block;
+	margin-left: 2.5em;
+	padding-left: 0;
+}
+
+header nav ul li a {
+	color: white;
+  font-weight: bold;
+	display: inline-block;
+	text-decoration: none;
+  font-size: 20px;
+}
+
+header nav ul li a:hover {
+color: #edebeb;
+}
+header button{
+  border-radius: 20px;
+  background-color: white;
+  border: none;
+  color: #333939;
+  padding: 10px 25px;
+  font-weight: bold;
+  font-family: "Filson", sans-serif;
+  font-size: 20px;
+}
+header button:hover {
+	color: #484848;
+  background-color: #e8e3e3;
+
+}
+
+  
+/*****************************
+Nav Ends
+*****************************/
+
+
+#searchBar{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-radius: 25px;
+  border-width: 0px;
+  padding: 10px 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  outline: none !important;
+
+
+  margin-right: 100px;
+  padding-right: 50px;
+}
+html, body {
+   
+    background-color: #4E6764;
+  }
+  /*****************************
+  section begins
+  *****************************/
+  
+  
+section{background: #EAE7E2 }
+       h2{
+        text-align: center;
+        color: #4E6764
+       }
+  /*****************************
+  Footer ends
+  *****************************/
+  
+  
+  /*****************************
+  Footer begins
+  *****************************/
+  
+  
+  footer {
+    height: fit-content;
+    color: white !important; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: #4E6764;
+  
+  }
+  footer div {
+    margin-left: 50px;
+    margin-right: 50px;
+    display: inline-table;
+    margin-top: 30px;
+    text-align: left;
+  }
+  footer a {
+    color: white;
+  }
+  #footerHeader{
+    font-weight: bold;
+  }
+  #noUnderline{
+    text-decoration: none !important;
+  }
+  @media screen and (max-width: 800px) { 
+  #dissapearFirst{display: none;}
+}
+  
+  @media screen and (max-width: 500px) { 
+  .homeButton{display: none;}
+  #searchBar{
+    display:none;
+  }
+}

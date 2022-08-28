@@ -1,0 +1,213 @@
+#searchBar{
+  background-image: url('https://i.imgur.com/E0Yv9aJ.png');
+  background-repeat: no-repeat;
+  background-position: bottom 10px left 15px;
+  background-size: 3%;
+  padding-left: 40px !important;
+
+}
+
+/*****************************
+  Overall Starts
+  *****************************/
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  *{
+    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Filson', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  section{
+    padding: 75px;
+  }
+  
+  /*****************************
+  Overall Ends
+  *****************************/
+  
+  /*****************************
+  Header Begins
+  *****************************/
+  
+  #logo{
+    padding: 25px;
+  }
+  
+html, body {
+   
+  background-color: #4E6764;
+}
+  
+  header {
+    color: black;
+    cursor: default;
+    line-height: 4.4em;
+    width: 100%;
+    font-family: 'Filson';
+    background: url("https://i.imgur.com/DsdSoGi.jpg") no-repeat;
+    padding-bottom: 50px;
+    background-position: center 0px;
+    background-size: cover;
+  
+  
+  }
+  
+  /*****************************
+  Nav Begins
+  *****************************/
+  
+  header nav {
+    height: inherit;
+    line-height: inherit;
+    position: absolute;
+    right: 1.25em;
+    top: 0;
+    vertical-align: right;
+  }
+  
+  header nav ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 30px;
+    padding-top: 30px;
+  }
+  
+  header nav ul li {
+    border-radius: 0px;
+    display: inline-block;
+    margin-left: 2.5em;
+    padding-left: 0;
+  }
+  
+  header nav ul li a {
+    color: #333939;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  header nav ul li a:hover {
+    color: #484848;
+  }
+  header button{
+    border-radius: 20px;
+    background-color: white;
+    border: none;
+    color: #333939;
+    padding: 10px 25px;
+    font-weight: bold;
+    font-family: "Filson", sans-serif;
+    font-size: 20px;
+  }
+  header button:hover {
+    color: #484848;
+    background-color: #e8e3e3;
+  
+  }
+  /*****************************
+  Nav Ends
+  *****************************/
+  
+  /*****************************
+  Logo and search bar begins
+  *****************************/
+  
+  #large_logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    padding-top: 50px;
+  }
+  
+  #searchBar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    border-radius: 25px;
+    border-width: 0px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    outline: none !important;
+  }
+  
+  /*****************************
+  Logo and search bar ends
+  *****************************/
+  /*****************************
+  header ends
+  *****************************/
+  /*****************************
+  About begins
+  *****************************/
+  
+  #about h1{
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 50px;
+    color: #4E6764;
+  }
+  #about p{
+    line-height: 200%;
+    font-size: 20px;
+    color: #4E6764;
+  }
+  #about a{
+    text-decoration: none;
+    color: #4E6764;
+  }
+  #about{
+    background: #EAE7E2;
+  }
+  
+  /*****************************
+  About ends
+  *****************************/
+  
+  /*****************************
+  Footer begins
+  *****************************/
+  
+  
+  footer {
+    height: fit-content;
+    color: white !important; 
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: #4E6764;
+  
+  }
+  footer div {
+    margin-left: 50px;
+    margin-right: 50px;
+    display: inline-table;
+    margin-top: 30px;
+    text-align: left;
+  }
+  footer a {
+    color: white;
+  }
+  #footerHeader{
+    font-weight: bold;
+  }
+  #noUnderline{
+    text-decoration: none !important;
+  }
+  
+  @media screen and (max-width: 500px) { 
+  #dissapearFirst{display: none;}
+}
