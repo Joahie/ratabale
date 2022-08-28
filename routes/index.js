@@ -29,7 +29,7 @@ router.post('/addAnInstructor', async (req, res)=>{
     var results = await MongoTeachers.findOne({ nameToLowerCase: temp})
     if (!results){
                 
-        MongoTeachers.insertOne({nameToLowerCase: temp, name: answer.name, rating: null, school: answer.school, subjectclass: answer.subjectClass, teacher: teacher, rQuantity: 0, accessibility: null, clarity: null, difficulty: null, organization: null, notes: []})
+        MongoTeachers.insertOne({nameToLowerCase: temp, name: answer.name, rating: null, school: answer.school, subjectclass: answer.subjectClass, teacher: teacher, rQuantity: 0, accessibility: null, clarity: null, difficulty: null, organization: null, notes: [], users: []})
         
         res.redirect("/search?search=" + answer.name)
     }else{
@@ -67,10 +67,10 @@ router.get("/search", async (req,res)=>{
             })    
         }catch(err){
             console.log(err)
-            return res.render("results", {
+         return res.render("results", {
 
                 valid: false,
-                name: req.body.search,
+                name: req.query.search,
                 user: req.session.email
 
             })
