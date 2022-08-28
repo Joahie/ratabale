@@ -1,0 +1,25 @@
+{
+  "name": "express-ejs-example",
+  "version": "1.0.0",
+  "description": "A test ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "connect-mongodb-session": "^3.1.1",
+    "cookie-session": "1.4.0",
+    "dotenv": "^16.0.1",
+    "ejs": "3.1.6",
+    "express": "^4.17.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mongodb": "^4.6.0",
+    "passport": "^0.6.0"
+  },
+  "author": "Joshua Zou (subscribe)",
+  "license": "MIT"
+}
