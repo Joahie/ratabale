@@ -226,5 +226,10 @@ router.post('/signup', async (req, res)=>{
 })
 
 
+router.all('*', (req, res) => {
+    res.status(404).render('404', {                user: req.session.email
+    });
+  });
+
 
 module.exports = router;
