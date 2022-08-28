@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/jaODtWd.png">
+    <link href="/css/404.css" rel="stylesheet" type="text/css" />
+  <script src="/js/script.js"></script>
+  <title>404</title>
+</head>
+<body>
+  <header id = "home">
+      <a href="/"><img src="https://i.imgur.com/sT16qlE.png" id = "logo"></a>
+     
+    
+    <nav>          
+      <ul>
+        <li> <form class="searchBar" action="/" method = "POST">
+               <li>      <input type="text" placeholder="Instructor's name" name="search" id = "searchBar">
+    </form></li>
+        <li><a class = "homeButton"  href="/">Home</a></li>
+
+        <li id = "dissapearFirst"><a  href="/#about">About</a></li>
+                <li id = "dissapearFirst"><a  href="/contact">Contact</a></li>
+
+                <% if (user) { %>
+                    <li><form action="/signout" method = "POST"><button>Sign Out</button></form> </li>
+                      <% } else { %>
+                    <li> <button onClick="redirect('/signin')" />Sign In</button></li>
+                      <% } %>   
+      </ul>
+    </nav>
+  </header>
+
+
+
+  <section id = "404">
+    
+
+<h1>404 error <br><br>The page you're looking for doesn't exist</h1>
+  </section>
+   <footer>
+    <div>      
+      <span id = "footerHeader">Code</span>
+      <br>
+      <br>    
+        <span>    
+Find all the source code for the project on <a href="https://github.com/Joahie/ratabale" target="_blank">Github</a></a>.
+        </span>
+    </div>
+<div>
+        <span id = "footerHeader">Website</span>
+      <br>
+      <br>
+        <span><a id = "noUnderline"href="/">Home</a></span>
+    <br><br>
+  <span><a id = "noUnderline"href="/#about">About</a></span>
+  <br><br>
+        <span><a id = "noUnderline"href="/contact">Contact</a></span>
+    </div>
+     </footer>
+</body>
+</html>
+
+
+
+
