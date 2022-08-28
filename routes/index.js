@@ -18,7 +18,7 @@ const isAuth = (req, res, next)=>{
 
 const env = require("dotenv").config()
 
-router.post('/addaninstructor', async (req, res)=>{
+router.post('/addAnInstructor', async (req, res)=>{
     var answer = req.body
     let temp = answer.name.toLowerCase().replaceAll(' ', '') 
     if(answer.typeOfEducator == "Tutor"){
@@ -86,7 +86,7 @@ router.post("/addAReview", isAuth, async (req, res)=>{
     var results = await MongoTeachers.findOne({ nameToLowerCase: answer})
     let StringifiedResults = JSON.stringify(results)
     let ParsedResults = JSON.parse(StringifiedResults)
-    return res.render("rateaninstructor", {
+    return res.render("rateAnInstructor", {
         name: ParsedResults.name,
         dbname: answer
     })
@@ -173,14 +173,14 @@ router.post('/signout', (req,res)=>{
 router.get('/', (req, res)=>{
     res.render('index', {user: req.session.email})
 })
-router.get('/addaninstructor', isAuth, (req, res)=>{
-    res.render('addaninstructor', {
+router.get('/addAnInstructor', isAuth, (req, res)=>{
+    res.render('addAnInstructor', {
         alreadyCreated: false,
         teacherName: null})
 })
 
-router.get('/rateaninstructor', isAuth, (req, res)=>{
-    res.render('rateaninstructor')
+router.get('/rateAnInstructor', isAuth, (req, res)=>{
+    res.render('rateAnInstructor')
 })
 router.post("/signin", async (req, res)=>{
     var answer = req.body
