@@ -20,6 +20,6 @@
     "mongodb": "^4.6.0",
     "passport": "^0.6.0"
   },
-  "author": "Joshua Zou (subscribe)",
+  "author": "Joshua Ren",
   "license": "MIT"
 }
