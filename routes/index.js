@@ -1,3 +1,4 @@
+//dependencies and such
 const router = require('express').Router();
 const { render } = require('ejs');
 const { application } = require('express');
@@ -5,7 +6,9 @@ const mongoclient = global.mongoclient;
 const MongoTeachers = mongoclient.db("ratable").collection("teachers")
 const MongoContact = mongoclient.db("ratable").collection("contact")
 const MongoAccounts = mongoclient.db("ratable").collection("accounts")
+const env = require("dotenv").config()
 
+//middleware for cookie authentication
 const isAuth = (req, res, next)=>{
     if(req.session.email){
         next()
@@ -15,31 +18,24 @@ const isAuth = (req, res, next)=>{
     }
 }
 
-const env = require("dotenv").config()
+    
+//renders the addAReview page when people visit [insert website url]/addareview
+router.get("/addAReview", (req,res)=>{
+    res.render('addAReview')
+})
 
-router.post('/addAnInstructor', async (req, res)=>{
-    var answer = req.body
-    let temp = answer.name.toLowerCase().replaceAll(' ', '') 
-    if(answer.typeOfEducator == "Tutor"){
-        var teacher = false
-    }else{
-        var teacher = true
-    }
-    var results = await MongoTeachers.findOne({ nameToLowerCase: temp})
-    if (!results){
-                
-        MongoTeachers.insertOne({nameToLowerCase: temp, name: answer.name, rating: null, school: answer.school, subjectclass: answer.subjectClass, teacher: teacher, rQuantity: 0, accessibility: null, clarity: null, difficulty: null, organization: null, notes: [], users: []})
-        
-        res.redirect("/search?search=" + answer.name)
-    }else{
-        return res.render("addAnInstructor", {
-            alreadyCreated: true,
-            teacherName: answer.name
-        })
-    }})
-    
-    
-    
+//post request for when people want to add a review (middleware isAuth function is there to make sure that the user is logged in before they add a review)
+router.post("/addAReview", isAuth, async (req, res)=>{
+    var answer = req.body.name
+    var results = await MongoTeachers.findOne({ nameToLowerCase: answer})
+    let StringifiedResults = JSON.stringify(results)
+    let ParsedResults = JSON.parse(StringifiedResults)
+    return res.render("rateAnInstructor", {
+        name: ParsedResults.name,
+        dbname: answer
+    })
+})
+//get request for when the search function is used
 router.get("/search", async (req,res)=>{
        try{
         var answer = req.query.search.toLowerCase();  
@@ -76,20 +72,28 @@ router.get("/search", async (req,res)=>{
                              
     }   
 });
-router.get("/addAReview", (req,res)=>{
-    res.render('addAReview')
-})
-
-router.post("/addAReview", isAuth, async (req, res)=>{
-    var answer = req.body.name
-    var results = await MongoTeachers.findOne({ nameToLowerCase: answer})
-    let StringifiedResults = JSON.stringify(results)
-    let ParsedResults = JSON.parse(StringifiedResults)
-    return res.render("rateAnInstructor", {
-        name: ParsedResults.name,
-        dbname: answer
-    })
-})
+//post request for people adding an instructor
+router.post('/addAnInstructor', async (req, res)=>{
+    var answer = req.body
+    let temp = answer.name.toLowerCase().replaceAll(' ', '') 
+    if(answer.typeOfEducator == "Tutor"){
+        var teacher = false
+    }else{
+        var teacher = true
+    }
+    var results = await MongoTeachers.findOne({ nameToLowerCase: temp})
+    if (!results){
+                
+        MongoTeachers.insertOne({nameToLowerCase: temp, name: answer.name, rating: null, school: answer.school, subjectclass: answer.subjectClass, teacher: teacher, rQuantity: 0, accessibility: null, clarity: null, difficulty: null, organization: null, notes: [], users: []})
+        
+        res.redirect("/search?search=" + answer.name)
+    }else{
+        return res.render("addAnInstructor", {
+            alreadyCreated: true,
+            teacherName: answer.name
+        })
+    }})
+    
 function mathPogging(originalNumber, newNumber, numberOfReviewers){
     let temp
     let temp1 = originalNumber*1
