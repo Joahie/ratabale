@@ -1,3 +1,4 @@
+//dependencies
 const express = require('express');
 const app = express();
 const { MongoClient } = require('mongodb')
@@ -7,7 +8,7 @@ const mongoclient = new MongoClient(uri, { useUnifiedTopology: true });
 app.use(express.urlencoded({ extended: false }));
 const session = require('express-session')
 const MongoDBSession = require("connect-mongodb-session")(session)
-
+//cookie stuff
 const store = new MongoDBSession({
     uri: uri,
     collection: 'mySessions'
