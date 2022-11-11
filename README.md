@@ -1,2 +1,2 @@
 # ratabale
-This is the code for RaTable, a more comprehensive version of ratemyprofessor.com that I created
+This is the code for RaTable, a website similar to ratemyprofessor.com that I created for a hackathon
